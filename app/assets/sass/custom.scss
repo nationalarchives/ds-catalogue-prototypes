@@ -61,6 +61,13 @@
   @include colour.colour-font("font-light");
 }
 
+.square {
+  aspect-ratio: 1;
+  padding: spacing.space(0.75);
+  display: flex;
+  align-items: center;
+}
+
 .large-icon {
   font-size: 2rem;
 }
