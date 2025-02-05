@@ -1,3 +1,5 @@
+@use "../../../node_modules/@nationalarchives/frontend/nationalarchives/variables/borders";
+
 @use "../../../node_modules/@nationalarchives/frontend/nationalarchives/tools/colour";
 @use "../../../node_modules/@nationalarchives/frontend/nationalarchives/tools/media";
 @use "../../../node_modules/@nationalarchives/frontend/nationalarchives/tools/spacing";
@@ -59,4 +61,9 @@
 
 .large-icon {
   font-size: 2rem;
+}
+
+.full-height-card {
+  padding-top: spacing.space(1) !important;
+  height: calc(100% - #{spacing.space(2)} - #{borders.$thick-border-width});
 }
