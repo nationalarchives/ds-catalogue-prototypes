@@ -3,7 +3,7 @@
 {%- from 'nationalarchives/components/global-header/macro.njk' import tnaGlobalHeader -%}
 {% from 'nationalarchives/components/phase-banner/macro.njk' import tnaPhaseBanner %}
 
-{% set themeAccent = 'blue' %}
+{% set themeAccent = themeAccent or 'blue' %}
 
 {% block header %}
 {{ tnaPhaseBanner({
