@@ -1,0 +1,62 @@
+@use "../../../node_modules/@nationalarchives/frontend/nationalarchives/tools/colour";
+@use "../../../node_modules/@nationalarchives/frontend/nationalarchives/tools/media";
+@use "../../../node_modules/@nationalarchives/frontend/nationalarchives/tools/spacing";
+@use "../../../node_modules/@nationalarchives/frontend/nationalarchives/tools/typography";
+
+.reference {
+  padding-right: 0.25em;
+  padding-left: 0.25em;
+  display: inline-block;
+  @include colour.colour-border("keyline", 1px);
+  @include typography.detail-font;
+  line-height: 1.4;
+  @include colour.tint;
+}
+
+.full-height-aside {
+  height: calc(100% - #{spacing.space(2)});
+}
+
+.tna-dl--dotted {
+  @include colour.colour-border("keyline", 1px, solid, bottom);
+
+  > dt,
+  > dd {
+    padding-top: spacing.space(0.5);
+    padding-bottom: spacing.space(0.5);
+    background-color: transparent !important;
+
+      @include colour.colour-border("keyline", 1px, solid, top);
+  }
+
+  @include media.on-tiny {
+    > dd {
+      border-top: none;
+    }
+  }
+
+  .tna-dl-chips {
+    dt {
+      width: 0;
+      padding: 0;
+    }
+
+    dd {
+      width: auto;
+      padding: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+.tna-dl__dt-detail {
+  padding-top: spacing.space(0.25);
+  padding-bottom: spacing.space(0.25);
+  display: block;
+  @include typography.detail-font-small;
+  text-transform: none;
+}
+
+.large-icon {
+  font-size: 2rem;
+}

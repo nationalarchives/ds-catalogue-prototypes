@@ -1,20 +1,23 @@
-{% extends "layouts/main.html" %}
+{% extends 'layouts/main.html' %}
 
-{% set pageName="Home" %}
+{% set pageTitle = 'Catalogue prototypes' %}
 
 {% block content %}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
-
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+<div class="tna-section">
+  <div class="tna-container">
+    <div class="tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny">
+      <h1 class="tna-heading-xl">{{ pageTitle }}</h1>
+      <ol class="tna-ol">
+        <li>
+          Version 1
+          <ul class="tna-ul">
+            <li>
+              <a href="/record-details">Record details</a>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
   </div>
 </div>
-
 {% endblock %}

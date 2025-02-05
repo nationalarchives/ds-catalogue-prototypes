@@ -1,0 +1,69 @@
+{% extends 'layouts/main.html' %}
+
+{% from 'nationalarchives/components/breadcrumbs/macro.njk' import tnaBreadcrumbs %}
+{% from 'nationalarchives/components/button/macro.njk' import tnaButton %}
+{% from 'nationalarchives/components/secondary-navigation/macro.njk' import tnaSecondaryNavigation %}
+
+{% set pageTitle = 'Record details' %}
+{% set themeAccent = 'green' %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/stylesheets/custom.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block beforeContent %}
+<!-- <div class="tna-container">
+  {{ tnaBreadcrumbs({
+    items: [
+      {
+        text: 'Home',
+        href: '/'
+      }
+    ],
+    classes: 'tna-column tna-column--full tna-!--padding-vertical-s'
+  }) }}
+</div> -->
+<div class="tna-background-tint">
+  <div class="tna-container">
+    <div class="tna-column tna-column--full tna-!--padding-top-s">
+      <div class="tna-button-group tna-!--margin-bottom-s">
+        {{ tnaButton({
+          text: "Back to search results",
+          href: "#",
+          plain: true,
+          small: true
+        }) }}
+        {{ tnaButton({
+          text: "Start a new search",
+          href: "#",
+          plain: true,
+          small: true
+        }) }}
+      </div>
+      {{ tnaSecondaryNavigation({
+        title: "Sections",
+        headingLevel: 2,
+        items: [
+          {
+            name: "About this record",
+            href: "/record-details",
+            current: activeNavItem == 'details'
+          },
+          {
+            name: "Related records",
+            href: "/record-details/related",
+            current: activeNavItem == 'related'
+          },
+          {
+            name: "New to archives?",
+            href: "/record-details/help",
+            current: activeNavItem == 'help'
+          }
+        ],
+        noBottomBorder: true
+      }) }}
+    </div>
+  </div>
+</div>
+{% endblock %}

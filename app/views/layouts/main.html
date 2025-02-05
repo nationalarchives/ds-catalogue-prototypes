@@ -1,6 +1,62 @@
-{#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
+{% extends 'nationalarchives/templates/layouts/_prototype-kit.njk' %}
 
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{%- from 'nationalarchives/components/global-header/macro.njk' import tnaGlobalHeader -%}
+{% from 'nationalarchives/components/phase-banner/macro.njk' import tnaPhaseBanner %}
+
+{% set themeAccent = 'blue' %}
+
+{% block header %}
+{{ tnaPhaseBanner({
+  phase: 'prototype',
+  message: 'This is a prototype for the new catalogue pages'
+}) }}
+{{ tnaGlobalHeader({
+  logo: {
+    href: "#/"
+  },
+  topNavigation: [
+    {
+      text: "Search",
+      href: "#/search/",
+      icon: "search"
+    },
+    {
+      text: "Shop",
+      href: "#/shop",
+      icon: "shop"
+    }
+  ],
+  navigation: [
+    {
+      text: "Visit",
+      href: "#/about/visit-us/"
+    },
+    {
+      text: "What’s on",
+      href: "#/about/visit-us/whats-on/"
+    },
+    {
+      text: "Explore the collection",
+      href: "#/explore-the-collection/"
+    },
+    {
+      text: "Help using the archive",
+      href: "#/help-with-your-research/"
+    },
+    {
+      text: "Education",
+      href: "#/education/"
+    },
+    {
+      text: "Professional guidance and services",
+      href: "#/professional-guidance-and-services/"
+    }
+  ]
+}) | indent(4) }}
+{% endblock %}
+
+{% block footer %}
+{{ tnaFooter({
+    themeSelector: true
+}) | indent(4) }}
+{% endblock %}
