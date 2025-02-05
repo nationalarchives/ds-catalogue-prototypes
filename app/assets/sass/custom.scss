@@ -67,3 +67,11 @@
   padding-top: spacing.space(1) !important;
   height: calc(100% - #{spacing.space(2)} - #{borders.$thick-border-width});
 }
+
+a:visited {
+  @include colour.colour-font("link", true);
+}
+
+.tna-secondary-navigation__item--current .tna-secondary-navigation__link:visited {
+  @include colour.colour-font("font-base", true);
+}
