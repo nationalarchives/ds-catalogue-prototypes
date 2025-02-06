@@ -55,10 +55,15 @@
 .tna-dl__dt-detail {
   padding-top: spacing.space(0.25);
   padding-bottom: spacing.space(0.25);
-  display: block;
+  display: none;
   @include typography.detail-font-small;
   text-transform: none;
   @include colour.colour-font("font-light");
+}
+
+.tna-form__group:has(#field_descriptions),
+main:has(#field_descriptions-show:checked) .tna-dl__dt-detail {
+  display: block !important;
 }
 
 .square {

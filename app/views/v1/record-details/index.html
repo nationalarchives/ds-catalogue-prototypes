@@ -2,6 +2,7 @@
 
 {% from "nationalarchives/components/button/macro.njk" import tnaButton %}
 {% from "nationalarchives/components/card/macro.njk" import tnaCard %}
+{% from "nationalarchives/components/checkboxes/macro.njk" import tnaCheckboxes %}
 {% from "nationalarchives/components/pagination/macro.njk" import tnaPagination %}
 
 {% set activeNavItem = 'details' %}
@@ -39,8 +40,29 @@
         <p>Learn more about <a href="#">records of Art and artists</a>.</p>
       </div>
     </div>
-    <div class="tna-column tna-column--full tna-!--margin-top-l">
+    <div class="tna-column tna-column--flex-1 tna-column--align-bottom tna-column--full-tiny tna-!--margin-top-l">
       <h2 class="tna-heading-l">Full description and record details</h2>
+    </div>
+    <div class="tna-column tna-column--full-tiny tna-!--margin-top-l">
+      {{ tnaCheckboxes({
+        label: "Field descriptions",
+        headingLevel: 3,
+        headingSize: "s",
+        id: "field_descriptions",
+        name: "field_descriptions",
+        items: [
+          {
+            text: "Show details",
+            value: "show"
+          }
+        ],
+        inline: true,
+        formGroupAttributes: {
+          hidden: true
+        }
+      }) }}
+    </div>
+    <div class="tna-column tna-column--full tna-!--margin-top-l">
       <dl class="tna-dl tna-dl--plain tna-dl--dotted">
         <dt>
           Description
